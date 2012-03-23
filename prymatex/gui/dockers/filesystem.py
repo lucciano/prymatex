@@ -88,12 +88,12 @@ class PMXFileSystemDock(QtGui.QDockWidget, Ui_FileSystemDock, PMXFileSystemTasks
     
     _pushButtonHistoryBack = []
     _pushButtonHistoryForward = []
-    
+    instance = None
     def __init__(self, parent = None):
         QtGui.QDockWidget.__init__(self, parent)
         PMXBaseDock.__init__(self)
         self.setupUi(self)
-        
+        self.__class__.instance = self
         #File System model
         self.fileSystemModel = QtGui.QFileSystemModel(self)
         self.fileSystemModel.setFilter(QtCore.QDir.NoDotAndDotDot | QtCore.QDir.AllEntries) #http://doc.qt.nokia.com/latest/qdir.html#Filter-enum

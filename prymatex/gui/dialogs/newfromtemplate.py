@@ -25,7 +25,7 @@ class PMXNewFromTemplateDialog(QtGui.QDialog, Ui_NewFromTemplateDialog):
         self.comboTemplates.setModelColumn(0)
         self.buttonCreate.setDefault(True)
         self.fileCreated = None
-    
+        
     def on_buttonChoose_pressed(self):
         directory = self.lineLocation.text()
         path = QtGui.QFileDialog.getExistingDirectory(self, _("Choose location for template"), directory)
@@ -56,6 +56,13 @@ class PMXNewFromTemplateDialog(QtGui.QDialog, Ui_NewFromTemplateDialog):
 
     def on_buttonClose_pressed(self):
         self.reject()
+
+    def showEvent(self, event):
+        #print QtGui.qApp.instance().pluginManager
+        from prymatex.gui.dockers.filesystem import PMXFileSystemDock
+        print "Current Path:", PMXFileSystemDock.instance.currentPath()
+        
+        return QtGui.QDialog.showEvent(self, event)
 
     @classmethod
     def newFileFromTemplate(cls, fileDirectory = "", fileName = "", parent = None):
