@@ -230,7 +230,7 @@ class PMXCompleterTableModel(QtCore.QAbstractTableModel):
         elif role == QtCore.Qt.ToolTipRole:
             if isinstance(suggestion, dict) and 'tool_tip' in suggestion:
                 if 'tool_tip_format' in suggestion:
-                    print suggestion["tool_tip_format"]
+                    print(suggestion["tool_tip_format"])
                 return suggestion['tool_tip']
             elif isinstance(suggestion, BundleItemTreeNode):
                 return suggestion.name

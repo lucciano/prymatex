@@ -336,12 +336,12 @@ class FuncProfile(object):
         lineno = self.fn.__code__.co_firstlineno
         print("")
         print("*** PROFILER RESULTS ***")
-        print("%s (%s:%s)" % (funcname, filename, lineno))
+        print(("%s (%s:%s)" % (funcname, filename, lineno)))
         if self.skipped:
             skipped = "(%d calls not profiled)" % self.skipped
         else:
             skipped = ""
-        print("function called %d times%s" % (self.ncalls, skipped))
+        print(("function called %d times%s" % (self.ncalls, skipped)))
         print("")
         stats = self.stats
         if self.filename:
@@ -439,12 +439,12 @@ if hotshot is not None:
             lineno = self.fn.__code__.co_firstlineno
             print("")
             print("*** PROFILER RESULTS ***")
-            print("%s (%s:%s)" % (funcname, filename, lineno))
+            print(("%s (%s:%s)" % (funcname, filename, lineno)))
             if self.skipped:
                 skipped = "(%d calls not profiled)" % self.skipped
             else:
                 skipped = ""
-            print("function called %d times%s" % (self.ncalls, skipped))
+            print(("function called %d times%s" % (self.ncalls, skipped)))
             print("")
             stats = hotshot.stats.load(self.logfilename)
             # hotshot.stats.load takes ages, and the .prof file eats megabytes, but
@@ -502,8 +502,8 @@ if hotshot is not None:
             lineno = self.fn.__code__.co_firstlineno
             print("")
             print("*** COVERAGE RESULTS ***")
-            print("%s (%s:%s)" % (funcname, filename, lineno))
-            print("function called %d times" % self.ncalls)
+            print(("%s (%s:%s)" % (funcname, filename, lineno)))
+            print(("function called %d times" % self.ncalls))
             print("")
             fs = FuncSource(self.fn)
             reader = hotshot.log.LogReader(self.logfilename)
@@ -576,8 +576,8 @@ class TraceFuncCoverage:
         lineno = self.fn.__code__.co_firstlineno
         print("")
         print("*** COVERAGE RESULTS ***")
-        print("%s (%s:%s)" % (funcname, filename, lineno))
-        print("function called %d times" % self.ncalls)
+        print(("%s (%s:%s)" % (funcname, filename, lineno)))
+        print(("function called %d times" % self.ncalls))
         print("")
         fs = FuncSource(self.fn)
         for (filename, lineno), count in self.tracer.counts.items():
@@ -587,7 +587,7 @@ class TraceFuncCoverage:
         print(fs)
         never_executed = fs.count_never_executed()
         if never_executed:
-            print("%d lines were not executed." % never_executed)
+            print(("%d lines were not executed." % never_executed))
 
 
 class FuncSource:
@@ -727,8 +727,8 @@ class FuncTimer(object):
         funcname = self.fn.__name__
         filename = self.fn.__code__.co_filename
         lineno = self.fn.__code__.co_firstlineno
-        print("\n  %s (%s:%s):\n"
+        print(("\n  %s (%s:%s):\n"
               "    %d calls, %.3f seconds (%.3f seconds per call)\n" % (
                                funcname, filename, lineno, self.ncalls,
-                               self.totaltime, self.totaltime / self.ncalls))
+                               self.totaltime, self.totaltime / self.ncalls)))
 

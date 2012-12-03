@@ -74,7 +74,7 @@ class ProjectManager(QtCore.QObject, PMXBaseComponent):
             try:
                 ProjectTreeNode.loadProject(path, self)
             except exceptions.FileNotExistsException as e:
-                print e
+                print(e)
                 self.knownProjects.remove(path)
                 self.settings.setValue('knownProjects', self.knownProjects)
 
@@ -177,11 +177,11 @@ class ProjectManager(QtCore.QObject, PMXBaseComponent):
 
     def openProject(self, project):
         # Cuando abro un proyecto agrego su namespace al support para aportar bundles y themes
-        print project.directory
+        print(project.directory)
 
     def closeProject(self, project):
         # Cuando cierro un proyecto quito su namespace al support
-        print project.directory
+        print(project.directory)
 
     def setWorkingSet(self, project, workingSet):
         projects = self.workingSets.setdefault(workingSet)

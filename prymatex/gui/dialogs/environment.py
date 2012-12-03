@@ -44,7 +44,7 @@ class EnvironmentWidget(QtGui.QWidget, Ui_Environment):
         self.model.setVisibility('prymatex', checked)
         
     def on_variablesModel_variablesChanged(self, group, variables):
-        print group, variables
+        print(group, variables)
 
     def on_pushAdd_pressed(self):
         self.model.insertVariable()

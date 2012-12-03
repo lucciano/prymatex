@@ -120,7 +120,7 @@ class ProjectTreeNode(FileSystemTreeNode):
         except Exception, e:
             import traceback
             traceback.print_exc()
-            print "Error in project %s (%s)" % (path, e)
+            print("Error in project %s (%s)" % (path, e))
     
     def setManager(self, manager):
         self.manager = manager

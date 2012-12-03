@@ -40,5 +40,5 @@ def remove_memoized_argument(key, function = None, condition = lambda f, key, mk
 def remove_memoized_function(function):
     for mfunction in DYNAMIC_MEMOIZED_CACHE.keys():
         if mfunction.func_name == function.func_name:
-            print "limpiando", mfunction
+            print("limpiando", mfunction)
             DYNAMIC_MEMOIZED_CACHE[mfunction].clear()

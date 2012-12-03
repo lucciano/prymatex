@@ -170,7 +170,7 @@ class TerminalDock(QtGui.QDockWidget, PMXBaseDock):
         if not self.isVisible():
             self.show()
         self.raise_()
-        print command
+        print(command)
     
     @classmethod
     def contributeToSettings(cls):

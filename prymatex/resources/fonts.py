@@ -38,5 +38,5 @@ def get_family(families):
         if font_is_installed(family):
             return family
     else:
-        print "Warning: None of the following fonts is installed: %r" % families
+        print("Warning: None of the following fonts is installed: %r" % families)
         return QtGui.QFont().family()

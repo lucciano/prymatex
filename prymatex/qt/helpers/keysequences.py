@@ -125,4 +125,4 @@ if __name__ == '__main__':
     tests = ['@r', '^~P', '@&', '@~)']
     for test in tests:
         code = keyequivalent2keysequence(test)
-        print "Code %d is sequence %s and nemonic is %s" % (code, QtGui.QKeySequence(code).toString(), buildKeyEquivalent(code))
+        print("Code %d is sequence %s and nemonic is %s" % (code, QtGui.QKeySequence(code).toString(), buildKeyEquivalent(code)))

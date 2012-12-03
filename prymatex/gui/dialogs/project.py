@@ -49,7 +49,7 @@ class PMXNewProjectDialog(QtGui.QDialog, Ui_NewProjectDialog):
         while True:
             path = QtGui.QFileDialog.getExistingDirectory(self, _("Choose Location for Project"), directory)
             if path:
-                print path
+                print(path)
                 if not os.path.exists(path): continue
                 path = os.path.abspath(path)
                 self.lineLocation.setText(path)

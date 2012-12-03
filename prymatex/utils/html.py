@@ -126,4 +126,4 @@ def clean_html(text):
     return text
     
 if __name__ == '__main__':
-    print urlize("holaMunDSos <a href='http://www.google.com'>http://www.google.com</a> 452 3jhds f as12315sdf")
+    print(urlize("holaMunDSos <a href='http://www.google.com'>http://www.google.com</a> 452 3jhds f as12315sdf"))

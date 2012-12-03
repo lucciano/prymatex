@@ -63,7 +63,7 @@ def runPrymatexApplication(options, files):
     try:
         returnCode = runPrymatexInstance(options, files)
     except exceptions.EnviromentNotSuitable:
-        print "Prymatex can't run. Basic imports can't be found. Running in virtualenv?"
+        print("Prymatex can't run. Basic imports can't be found. Running in virtualenv?")
         
     
     except exceptions.AlreadyRunningError as ex:
@@ -84,10 +84,10 @@ def runPrymatexApplication(options, files):
 
 def main(args):
     if not areBasicImportsAvaliable():
-        print
-        print "Prymatex can't be started. Basic imports are note available."
-        print "Check if you have: %s" % ', '.join(BASIC_IMPORTS)
-        print
+        print()
+        print("Prymatex can't be started. Basic imports are note available.")
+        print("Check if you have: %s" % ', '.join(BASIC_IMPORTS))
+        print()
         return
     
     from prymatex.core import cliparser

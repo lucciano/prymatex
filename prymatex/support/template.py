@@ -152,7 +152,7 @@ class PMXTemplate(PMXBundleItem):
                 template.addSource(namespace, path)
             return template
         except Exception, e:
-            print "Error in template %s (%s)" % (info, e)
+            print("Error in template %s (%s)" % (info, e))
 
     @classmethod
     def reloadBundleItem(cls, bundleItem, path, namespace, manager):

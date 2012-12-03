@@ -308,4 +308,4 @@ class FlatTreeProxyModel(QtCore.QAbstractItemModel):
                 self.endRemoveRows()
 
     def on_sourceModel_layoutChanged(self):
-        print "cambio el layout"
+        print("cambio el layout")

@@ -204,7 +204,7 @@ SAVED_CONFIG_FILES = ('.inspector', '.onlinehelp', '.path', '.pylint.results',
 
 def reset_session():
     """Remove all config files"""
-    print >>STDERR, "*** Reset Spyder settings to defaults ***"
+    print("*** Reset Spyder settings to defaults ***", file=STDERR)
     for fname in SAVED_CONFIG_FILES:
         cfg_fname = get_conf_path(fname)
         if osp.isfile(cfg_fname):
@@ -213,7 +213,7 @@ def reset_session():
             shutil.rmtree(cfg_fname)
         else:
             continue
-        print >>STDERR, "removing:", cfg_fname
+        print("removing:", cfg_fname, file=STDERR)
 
 def save_session(filename):
     """Save Spyder session"""
@@ -345,7 +345,7 @@ class IOFunctions(object):
                 other_funcs.append((mod.FORMAT_EXT, mod.FORMAT_NAME,
                                     mod.FORMAT_LOAD, mod.FORMAT_SAVE))
             except AttributeError, error:
-                print >>STDERR, "%s: %s" % (mod, str(error))
+                print("%s: %s" % (mod, str(error)), file=STDERR)
         return other_funcs
         
     def save(self, data, filename):
@@ -389,9 +389,9 @@ if __name__ == "__main__":
     import time
     t0 = time.time()
     save_dictionary(example, "test.spydata")
-    print " Data saved in %.3f seconds" % (time.time()-t0)
+    print(" Data saved in %.3f seconds" % (time.time()-t0))
     t0 = time.time()
     example2, ok = load_dictionary("test.spydata")
-    print "Data loaded in %.3f seconds" % (time.time()-t0)
+    print("Data loaded in %.3f seconds" % (time.time()-t0))
 #    for key in example:
 #        print key, ":", example[key] == example2[key]

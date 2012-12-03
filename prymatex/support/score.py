@@ -130,6 +130,6 @@ if __name__ == '__main__':
     scopeTags = "text.html -entity.other.attribute-name -string.quoted, invalid.illegal.incomplete.html" #Tags
     scopeAttrs = "text.html punctuation.definition.tag -source, text.html meta.tag -entity.other.attribute-name -source"
     reference = "text.html.basic meta.tag.any.html punctuation.definition.tag.html"
-    print scoreManager.score(scopeTags, reference)
-    print scoreManager.score(scopeAttrs, reference)
+    print(scoreManager.score(scopeTags, reference))
+    print(scoreManager.score(scopeAttrs, reference))
     

@@ -85,7 +85,7 @@ class BundleItemTypeProxyModel(FlatTreeProxyModel):
         try:
             return node.name.lower()
         except Exception, e:
-            print node, self.sourceModel(), index
+            print(node, self.sourceModel(), index)
     
     def compareIndex(self, xindex, yindex):
         xnode = xindex.internalPointer()

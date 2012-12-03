@@ -892,10 +892,10 @@ class CodeEditor(TextEditWidget, PMXBaseEditor):
                 cursor.beginEditBlock()
                 while not self.cursorRect(cursor).top() <= event.pos().y() <= self.cursorRect(cursor).bottom():
                     cursor.insertText("\n")
-                    print cursor.position(), self.cursorRect(cursor)
+                    print(cursor.position(), self.cursorRect(cursor))
                 while self.cursorRect(cursor).x() <= event.pos().x():
                     cursor.insertText(" ")
-                    print cursor.position(), self.cursorRect(cursor)
+                    print(cursor.position(), self.cursorRect(cursor))
                 cursor.endEditBlock()
                 self.setTextCursor(cursor)
             else:
@@ -1142,7 +1142,7 @@ class CodeEditor(TextEditWidget, PMXBaseEditor):
         #A shell command (string) which should return a list of candidates to complete the current word (obtained via the TM_CURRENT_WORD variable).
         if settings.completionCommand:
             def commandCallback(context):
-                print unicode(context)
+                print(unicode(context))
             command = self.application.supportManager.buildAdHocCommand(settings.completionCommand, self.getSyntax().bundle, commandInput="document")
             self.commandProcessor.configure({ "asynchronous": False })
             command.executeCallback(self.commandProcessor, commandCallback)

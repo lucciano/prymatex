@@ -216,6 +216,6 @@ def is_module_installed(module_name, version=None):
 
 
 if __name__ == '__main__':
-    print find_program('git')
-    print shell_split('-q -o -a')
-    print shell_split(u'-q "d:\\Python de xxxx\\t.txt" -o -a')
+    print(find_program('git'))
+    print(shell_split('-q -o -a'))
+    print(shell_split(u'-q "d:\\Python de xxxx\\t.txt" -o -a'))

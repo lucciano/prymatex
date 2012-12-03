@@ -34,7 +34,7 @@ class PMXSyntaxNode(object):
                     self.create_children(value)
             except TypeError, e:
                 #an encoding can only be given for non-unicode patterns
-                print e, value
+                print(e, value)
     
     def parse_repository(self, repository):
         self.repository = {}
@@ -115,7 +115,7 @@ class PMXSyntaxNode(object):
             index = int(mobj.group(0)[1:])
             return match.group(index)
         def d_match(mobj):
-            print "d_match"
+            print("d_match")
             index = mobj.group(0)
             return match.groupdict[index]
         regstring = compileRegexp(u'\\\\([1-9])').sub(g_match, regstring)
@@ -180,7 +180,7 @@ class PMXSyntax(PMXBundleItem):
                     value = compileRegexp( value )
                 except TypeError, e:
                     value = None
-                    print self.name, key, e
+                    print(self.name, key, e)
             setattr(self, key, value)
     
     @property

@@ -32,7 +32,7 @@ from urllib import quote, unquote
 try:
     import zmq
 except ImportError:
-    print sys.exc_info()[1]
+    print(sys.exc_info()[1])
     zmq = None
 
 appname = os.path.splitext(os.path.basename(sys.argv[0]))[0]

@@ -142,13 +142,13 @@ def main(args):
         tempFile.write(json.dumps(info))
         tempFile.close()
         os.chmod(CONNECTION_FILE, stat.S_IREAD | stat.S_IWRITE)
-        print CONNECTION_FILE
-        print info.items()
+        print(CONNECTION_FILE)
+        print(info.items())
         
         #Install signal handler
         signal.signal(signal.SIGINT, signal_handler)
     else:
-        print "Address error, please read help"
+        print("Address error, please read help")
     sys.stdout.flush()
 
 if __name__ == "__main__":

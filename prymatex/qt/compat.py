@@ -129,8 +129,8 @@ def getSaveFileName(parent=None, caption='', basedir='', filters='',
 if __name__ == '__main__':
     from prymatex.utils.qthelpers import qapplication
     app = qapplication()
-    print repr(getExistingDirectory())
-    print repr(getOpenFileName(filters='*.py;;*.txt'))
-    print repr(getOpenFileNames(filters='*.py;;*.txt'))
-    print repr(getSaveFileName(filters='*.py;;*.txt'))
+    print(repr(getExistingDirectory()))
+    print(repr(getOpenFileName(filters='*.py;;*.txt')))
+    print(repr(getOpenFileNames(filters='*.py;;*.txt')))
+    print(repr(getSaveFileName(filters='*.py;;*.txt')))
     sys.exit()

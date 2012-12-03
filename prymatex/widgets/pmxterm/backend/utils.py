@@ -63,4 +63,4 @@ def get_pmxterm_dir():
     return path
 
 if __name__ == '__main__':
-    print get_home_dir()
+    print(get_home_dir())

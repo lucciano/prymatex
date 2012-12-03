@@ -329,10 +329,10 @@ class PMXApplication(QtGui.QApplication):
         os.unlink(self.fileLock)
     
     def commitData(self, manager):
-        print "Commit data"
+        print("Commit data")
         
     def saveState(self, manager):
-        print "saveState"
+        print("saveState")
         pass
     
     #========================================================

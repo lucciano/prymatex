@@ -779,6 +779,6 @@ if __name__ == '__main__':
 	classify = magic.classify(binname)
 
 	if classify:
-		print binname + ": " + classify
+		print(binname + ": " + classify)
 	else:
-		print binname + ": Can not recognise file type"
+		print(binname + ": Can not recognise file type")

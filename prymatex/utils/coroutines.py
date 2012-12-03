@@ -564,14 +564,14 @@ if __name__ == '__main__':
 
 
     def valueReturner( name ):
-        print '%s valueReturner()' % name
+        print('%s valueReturner()' % name)
         v = 'valueReturner!'
         yield Return( v )
-        print 'never print it'
+        print('never print it')
 
 
     def multipleValueReturner( name ):
-        print '%s multipleValueReturner()' % name
+        print('%s multipleValueReturner()' % name)
         v1 = 'multipleValueReturner!'
         v2 = 2
 
@@ -586,20 +586,20 @@ if __name__ == '__main__':
 
         # Sleep system call example
         ms = random.randint( 1000, 2000 )
-        print '%s Sleep( %d )' % (name, ms)
+        print('%s Sleep( %d )' % (name, ms))
         yield Sleep( ms )
 
         # exception test
         try:
-            print '%s subcoroutinesTest()' % name
+            print('%s subcoroutinesTest()' % name)
 
             # return values and subcoroutines test
             v1, v2 = yield multipleValueReturner( name )
             v = yield valueReturner( name )
         except Exception, e:
-            print "%s exception '%s' handled!" % (name, e )
+            print("%s exception '%s' handled!" % (name, e ))
         else:
-            print '%s v = %s, v1 = %s, v2 = %s' % (name, v, v1, v2)
+            print('%s v = %s, v1 = %s, v2 = %s' % (name, v, v1, v2))
 
             # signal done test
             yield Return( name, v, v1, v2 )
@@ -607,7 +607,7 @@ if __name__ == '__main__':
 
     class TaskReturnValueTest( QObject ):
         def slotDone( self, res ):
-            print 'slotDone():', res.value
+            print('slotDone():', res.value)
 
 
     a = QApplication( sys.argv )

@@ -322,16 +322,16 @@ class TerminalWidget(QtGui.QWidget):
                 if s:
                     self.send(s.encode("utf-8"))
                 elif DEBUG:
-                    print "Unkonwn key combination"
-                    print "Modifiers:", modifiers
-                    print "Key:", key
+                    print("Unkonwn key combination")
+                    print("Modifiers:", modifiers)
+                    print("Key:", key)
                     for name in dir(Qt):
                         if not name.startswith("Key_"):
                             continue
                         value = getattr(Qt, name)
                         if value == key:
-                            print "Symbol: QtCore.Qt.%s" % name
-                    print "Text: %r" % text
+                            print("Symbol: QtCore.Qt.%s" % name)
+                    print("Text: %r" % text)
         event.accept()
         if key in (QtCore.Qt.Key_Enter, QtCore.Qt.Key_Return):
             self.return_pressed.emit()
@@ -422,7 +422,7 @@ class TerminalWidget(QtGui.QWidget):
     
             sel = self.text_selection()
             if DEBUG:
-                print "%r copied to xselection" % sel
+                print("%r copied to xselection" % sel)
             self._clipboard.setText(sel, QtGui.QClipboard.Selection)
             
             self.update_screen()
@@ -458,7 +458,7 @@ class TerminalWidget(QtGui.QWidget):
         
         sel = self.text_selection()
         if DEBUG:
-            print "%r copied to xselection" % sel
+            print("%r copied to xselection" % sel)
         self._clipboard.setText(sel, QtGui.QClipboard.Selection)
 
         self.update_screen()

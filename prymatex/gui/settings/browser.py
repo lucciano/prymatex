@@ -26,11 +26,11 @@ class NetworkSettingsWidget(QtGui.QWidget, SettingsTreeNode, Ui_BrowserWidget):
         self.settingGroup.setValue("proxy", text)
         
     def on_radioButtonNoProxy_toggled(self, checked):
-        print "radioButtonNoProxy", checked
+        print("radioButtonNoProxy", checked)
     
     def on_radioButtonSystemProxy_toggled(self, checked):
-        print os.environ.get('http_proxy', '')
-        print "radioButtonSystemProxy", checked
+        print(os.environ.get('http_proxy', ''))
+        print("radioButtonSystemProxy", checked)
         
     def on_radioButtonManualProxy_toggled(self, checked):
         self.lineEditProxy.setEnabled(checked)

@@ -150,7 +150,7 @@ class SpellCheckerAddon(CodeEditorAddon):
         self.editor.highlightEditor()
     
     def on_actionSpell_toggled(self, cursor):
-        print cursor.selectedText()
+        print(cursor.selectedText())
         
     def on_editor_syntaxReady(self):
         self.currentSpellTask = self.application.scheduler.newTask(self.spellCheckAllDocument())

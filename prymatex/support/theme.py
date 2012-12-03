@@ -57,7 +57,7 @@ class PMXTheme(PMXManagedObject):
             if key == 'settings':
                 self.settings.update(dataHash[key])
                 self.settings = dict(filter(lambda tupla: tupla[1] != None, self.settings.iteritems()))
-                print self.settings
+                print(self.settings)
             else:
                 setattr(self, key, dataHash[key])
     
@@ -102,7 +102,7 @@ class PMXTheme(PMXManagedObject):
                 theme.addSource(namespace, path)
             return theme
         except Exception, e:
-            print "Error en theme %s (%s)" % (path, e)
+            print("Error en theme %s (%s)" % (path, e))
 
     @classmethod
     def reloadTheme(cls, theme, path, namespace, manager):

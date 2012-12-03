@@ -211,7 +211,7 @@ class FileManager(QtCore.QObject, PMXBaseComponent):
                 content = fileRead.read()
                 break
             except Exception, e:
-                print "File: %s, %s" % (filePath, e)
+                print("File: %s, %s" % (filePath, e))
         fileRead.close()
         return content
 

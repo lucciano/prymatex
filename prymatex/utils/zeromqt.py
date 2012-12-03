@@ -72,8 +72,8 @@ class ZmqSocket(QtCore.QObject):
         flags=self._socket.getsockopt(EVENTS)
         if flags&POLLIN: self.readyRead.emit()
         elif flags&POLLOUT: self.readyWrite.emit()
-        elif flags&POLLERR: print "ZmqSocket.activity(): POLLERR"
-        else: print "ZmqSocket.activity(): fail"
+        elif flags&POLLERR: print("ZmqSocket.activity(): POLLERR")
+        else: print("ZmqSocket.activity(): fail")
 
     def _recv(self, flags=NOBLOCK):
         try: _msg=self._socket.recv(flags=flags)

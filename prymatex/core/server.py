@@ -198,5 +198,5 @@ class PrymatexServer(QtCore.QObject, PMXBaseComponent):
         self.sendResult()
 
     def debug(self, **kwargs):
-        print kwargs
+        print(kwargs)
         self.sendResult()

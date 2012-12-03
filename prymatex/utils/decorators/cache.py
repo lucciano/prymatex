@@ -75,7 +75,7 @@ def file_alteration_check(path):
 if __name__ == "__main__":
     import time, random
     cacheable.init_cache('functions.cache')
-    print cacheable.flashback
+    print(cacheable.flashback)
     
     @printtime
     @printparams
@@ -85,8 +85,8 @@ if __name__ == "__main__":
         return sum(largs)
 
     
-    print "Vamos a llamar una función que espera un tiempo"
-    print suma(1, 2)
-    print suma(1, 2)
-    print suma(1, 2)
+    print("Vamos a llamar una función que espera un tiempo")
+    print(suma(1, 2))
+    print(suma(1, 2))
+    print(suma(1, 2))
     cacheable.close_cache()

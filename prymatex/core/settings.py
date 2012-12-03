@@ -11,7 +11,7 @@ class TextMateSettings(object):
             try:
                 self.settings = plistlib.readPlist(self.file)
             except Exception as e:
-                print("Exception raised while reading settings file: %s" % e)
+                print(("Exception raised while reading settings file: %s" % e))
         
         not hasattr(self, "settings") and self.initializeSettings()
     

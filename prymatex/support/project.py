@@ -105,7 +105,7 @@ class PMXProject(PMXBundleItem):
                 project.addSource(namespace, path)
             return project
         except Exception, e:
-            print "Error in project %s (%s)" % (info, e)
+            print("Error in project %s (%s)" % (info, e))
 
     @classmethod
     def reloadBundleItem(cls, bundleItem, path, namespace, manager):

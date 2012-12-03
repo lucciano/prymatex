@@ -12,7 +12,7 @@ def format_args(*largs, **kwargs):
 def printparams(function):
     @functools.wraps(function)
     def wrapped(*largs, **kwargs):
-        print "%s(%s)" % (function.func_name, format_args(*largs, **kwargs))
+        print("%s(%s)" % (function.func_name, format_args(*largs, **kwargs)))
         retval = function(*largs, **kwargs)
         return retval
     return wrapped
@@ -22,7 +22,7 @@ def printparams_and_output(function):
     def wrapped(*largs, **kwargs):
         output = "%s(%s)" % (function.func_name, format_args(*largs, **kwargs))
         retval = function(*largs, **kwargs)
-        print "%s -> %s" % (output, retval)
+        print("%s -> %s" % (output, retval))
         return retval
     return wrapped
 
@@ -35,7 +35,7 @@ def printtime(function):
             func_name = '.'.join([function.im_class.__name__, function.im_func.__name__]) 
         else:
             func_name = function.func_name
-        print "%s tomσ %.7f s" % (func_name, time() - t0)
+        print("%s tomσ %.7f s" % (func_name, time() - t0))
         return retval
     return wrapped
 

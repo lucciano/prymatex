@@ -63,6 +63,6 @@ def parse():
             if hasattr(opts, 'files') \
             else []
     except Exception, reason:
-        print "Arguments couldn't be parsed."
-        print reason
+        print("Arguments couldn't be parsed.")
+        print(reason)
     return opts, filenames

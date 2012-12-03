@@ -250,7 +250,7 @@ class PMXBrowserDock(QtGui.QDockWidget, Ui_BrowserDock, PMXBaseDock):
         self.runningContext = context
     
     def runCommand(self, command):
-        print command
+        print(command)
         command, environment, tempFile = prepareShellScript(unicode(command), self.runningContext.environment)
         process = Popen(command, stdout = PIPE, stdin = PIPE, stderr = PIPE, env = environment)
         self.webView.page().mainFrame().addToJavaScriptWindowObject("_systemWrapper", SystemWrapper(process, command))

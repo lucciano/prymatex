@@ -102,7 +102,7 @@ class PMXTabTerminals(QtGui.QTabWidget):
 
     def eventFilter(self, obj, event):
         if event.type() == QtCore.QEvent.KeyPress:
-            print "tecla"
+            print("tecla")
             return False
         return QtGui.QTabWidget.eventFilter(self, obj, event)
      
@@ -270,7 +270,7 @@ class PMXTerminalDock(QtGui.QDockWidget, PMXBaseDock):
     def eventFilter(self, obj, event):
         if obj == self and event.type() == QtCore.QEvent.KeyPress:
             if event.modifiers() == QtCore.Qt.ControlModifier and event.key() in [ QtCore.Qt.Key_W]:
-                print "W"
+                print("W")
                 return
         return super(PMXTerminalDock, self).eventFilter(obj, event)
     
@@ -306,7 +306,7 @@ def signame_by_id(n):
         return _("Uknown signal")
     
 def sendSignalToProcess(pid, sig):
-    print("Sending %s to %s" % (signame_by_id(sig), pid))
+    print(("Sending %s to %s" % (signame_by_id(sig), pid)))
     os.kill(pid, sig)
     
     

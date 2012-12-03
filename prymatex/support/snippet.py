@@ -789,4 +789,4 @@ if __name__ == '__main__':
               'keyEquivalent': None }
     snippet = PMXSnippet(uuidmodule.uuid1(), dataHash = snippetHash)
     snippet.compile()
-    print snippet.snippet
+    print(snippet.snippet)
